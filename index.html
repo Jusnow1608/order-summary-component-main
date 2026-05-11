@@ -7,11 +7,79 @@
   <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@500;700;900&display=swap"
+    rel="stylesheet">
 
   <title>Frontend Mentor | Order summary card</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
+    body {
+      font-family: "Red Hat Display", sans-serif;
+      font-size: 16px;
+    }
+
+    .pricing-container {
+      background-image: url("images/pattern-background-desktop.svg");
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 1440px;
+      height: 100vh;
+      gap: 2rem;
+
+    }
+
+    .pricing-plan {
+      flex: 1;
+      max-width: 450px;
+      height: 700px;
+      padding: 0;
+      background-color: white;
+      border-radius: 15px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .plan-image {
+      object-fit: cover;
+    }
+
+    .plan-header {
+      font-size: 24px;
+      font-weight: 900;
+      padding-top: 15px;
+      padding-bottom: 0;
+    }
+
+    .plan-description {
+      color: hsl(224, 23%, 55%);
+      margin: 0 50px;
+      line-height: 25px;
+      padding-bottom: 15px;
+    }
+
+    .plan-details {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: hsl(225, 100%, 98%);
+      border-radius: 15px;
+      width: 350px;
+      padding: 15px;
+      margin-left: auto;
+      margin-right: auto;
+      gap: 110px;
+    }
+
+    .plan-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+
+    
 
     .attribution {
       font-size: 0.6875rem;
@@ -34,14 +102,18 @@
       <p class="plan-description"> You can now listen to millions of songs, audiobooks, and podcasts on any
         device anywhere you like!</p>
       <div class="plan-details">
-        <div class="plan-icon">
-        <img src="images/icon-music.svg"></img> 
+        <div class="plan-box">
+          <div class="plan-icon">
+            <img src="images/icon-music.svg"></img>
+          </div>
+          <div class="plan-features">
+            <div class="plan-type">Annual Plan</div>
+            <div class="plan-price">$59.99/year</div>
+          </div>
         </div>
-        <div class="plan-features">
-          <div class="plan-type">Annual Plan</div>
-          <div class="plan-price">$59.99/year</div>
+        <div class="change-link">
+          <a href="#">Change</a>
         </div>
-        <button class="plan-button">Change</button>
       </div>
       <button class="payment-button">Proceed to Payment</button>
       <button class="cancel-button">Cancel Order</button>
