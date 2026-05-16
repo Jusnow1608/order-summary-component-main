@@ -33,7 +33,7 @@
     .pricing-plan {
       flex: 1;
       max-width: 450px;
-      height: 700px;
+      height: 670px;
       padding: 0;
       background-color: white;
       border-radius: 15px;
@@ -43,13 +43,15 @@
 
     .plan-image {
       object-fit: cover;
+      height: 230px;
     }
 
     .plan-header {
-      font-size: 24px;
+      font-size: 28px;
       font-weight: 900;
       padding-top: 15px;
       padding-bottom: 0;
+      color: hsl(223, 47%, 23%);
     }
 
     .plan-description {
@@ -79,7 +81,60 @@
       gap: 20px;
     }
 
-    
+    .plan-features {
+      line-height: 25px;
+    }
+
+    .plan-type {
+      font-weight: 900;
+      color: hsl(223, 47%, 23%);
+     
+    }
+
+    .plan-price {
+      color: hsl(224, 23%, 55%);
+    }
+
+    .change-link {
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .change-link:link{
+      text-transform: none;
+    }
+
+    .payment-button {
+      border-radius: 10px;
+      width: 380px;
+      padding: 15px;
+      margin-left: auto;
+      margin-right: auto;
+      border: none;
+      color: white;
+      background-color: hsl(245, 75%, 52%);
+      font-weight: 700;
+      margin-top: 30px;
+    }
+     .payment-button:hover{
+      cursor:pointer;
+    }
+    .cancel-button{
+      border-radius: 10px;
+      width: 380px;
+      padding: 15px;
+      margin-left: auto;
+      margin-right: auto;
+      border: none;
+      color: hsl(224, 23%, 55%);
+      background-color: white;
+      font-weight: 700;
+      margin-top: 20px;
+    }
+    .cancel-button:hover{
+      cursor:pointer;
+    }
+
 
     .attribution {
       font-size: 0.6875rem;
@@ -88,6 +143,18 @@
 
     .attribution a {
       color: hsl(228, 45%, 44%);
+    }
+
+    @media (max-width: 375px){
+      .pricing-container {
+      width: 375px;
+
+    }
+.pricing-plan {
+      flex: 1;
+      max-width: 355px;
+      height: 650px;
+    }
     }
   </style>
 </head>
