@@ -14,64 +14,82 @@
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: "Red Hat Display", sans-serif;
+      color: hsl(224, 23%, 55%);
       font-size: 16px;
+      background-image: url("images/pattern-background-desktop.svg");
+      margin: 0;
+      padding: 0;
     }
 
     .pricing-container {
-      background-image: url("images/pattern-background-desktop.svg");
       display: flex;
+      /*czy nie lepiej robić flex-direction: coliumn dla prostokąta?*/
       justify-content: center;
       align-items: center;
-      width: 1440px;
-      height: 100vh;
-      gap: 2rem;
+      width: 100%;
+      min-height: 100vh;
+      padding: 40px 20px;
+
+      /*czy ten gap nie bardziej ma sens dla elementów wewnątrz prostokąta?*/
 
     }
 
     .pricing-plan {
       flex: 1;
       max-width: 450px;
-      height: 670px;
+      width: 100%;
       padding: 0;
       background-color: white;
       border-radius: 15px;
       text-align: center;
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 30px;
     }
 
     .plan-image {
       object-fit: cover;
       height: 230px;
+      width: 100%;
     }
 
-    .plan-header {
+    .card-body {
+      padding: 10px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .plan-title {
       font-size: 28px;
       font-weight: 900;
-      padding-top: 15px;
-      padding-bottom: 0;
       color: hsl(223, 47%, 23%);
+      margin: 0;
     }
 
     .plan-description {
-      color: hsl(224, 23%, 55%);
-      margin: 0 50px;
+      margin: 0 10px;
       line-height: 25px;
-      padding-bottom: 15px;
     }
 
     .plan-details {
       display: flex;
-      justify-content: center;
       align-items: center;
       background-color: hsl(225, 100%, 98%);
       border-radius: 15px;
-      width: 350px;
-      padding: 15px;
-      margin-left: auto;
-      margin-right: auto;
-      gap: 110px;
+      width: 100%;
+      padding: 20px;
+      justify-content: space-between;
     }
 
     .plan-box {
@@ -82,59 +100,69 @@
     }
 
     .plan-features {
-      line-height: 25px;
+      line-height: 28px;
     }
 
     .plan-type {
       font-weight: 900;
       color: hsl(223, 47%, 23%);
-     
+      font-size: 16px;
     }
 
     .plan-price {
       color: hsl(224, 23%, 55%);
+      font-size: 18px;
     }
 
-    .change-link {
+    .change-link a {
       font-weight: 700;
       font-size: 14px;
+      color: hsl(245, 75%, 52%);
     }
 
-    .change-link:link{
-      text-transform: none;
+    .change-link a:hover {
+      text-decoration: none;
+      color: hsl(245, 83%, 68%);
+      font-weight: 700;
     }
 
     .payment-button {
       border-radius: 10px;
-      width: 380px;
-      padding: 15px;
-      margin-left: auto;
-      margin-right: auto;
-      border: none;
+      width: 100%;
+      padding: 16px;
+      border: .5px solid hsl(223, 47%, 23%);
       color: white;
       background-color: hsl(245, 75%, 52%);
       font-weight: 700;
-      margin-top: 30px;
-    }
-     .payment-button:hover{
-      cursor:pointer;
-    }
-    .cancel-button{
-      border-radius: 10px;
-      width: 380px;
-      padding: 15px;
-      margin-left: auto;
-      margin-right: auto;
-      border: none;
-      color: hsl(224, 23%, 55%);
-      background-color: white;
-      font-weight: 700;
-      margin-top: 20px;
-    }
-    .cancel-button:hover{
-      cursor:pointer;
+      margin-top: 10px;
+      font-size: 15px;
+      cursor: pointer;
+      box-shadow: 0 20px 20px 0 rgba(56, 41, 224, 0.2);
     }
 
+    .payment-button:hover {
+      background-color: hsl(245, 83%, 68%);
+      border: .5px solid hsl(245, 47%, 62%);
+      box-shadow: 0 10px 15px 0 rgba(56, 41, 224, 0.3);
+    }
+
+    .cancel-link {
+      margin-bottom: 30px;
+      padding: 10px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cancel-link a {
+      color: hsl(224, 23%, 55%);
+      font-weight: 700;
+      font-size: 15px;
+      text-decoration: none;
+    }
+
+    .cancel-link a:hover {
+      color: hsl(223, 47%, 23%);
+    }
 
     .attribution {
       font-size: 0.6875rem;
@@ -145,16 +173,12 @@
       color: hsl(228, 45%, 44%);
     }
 
-    @media (max-width: 375px){
-      .pricing-container {
-      width: 375px;
+    @media (max-width: 375px) {
 
-    }
-.pricing-plan {
-      flex: 1;
-      max-width: 355px;
-      height: 650px;
-    }
+      .pricing-plan {
+        max-width: 355px;
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -163,27 +187,31 @@
   <div class="pricing-container">
     <div class="pricing-plan">
       <div class="plan-image">
-        <img src="images/illustration-hero.svg"></img>
+        <img src="images/illustration-hero.svg" alt="Hero illustration">
       </div>
-      <h1 class="plan-header">Order Summary</h1>
-      <p class="plan-description"> You can now listen to millions of songs, audiobooks, and podcasts on any
-        device anywhere you like!</p>
-      <div class="plan-details">
-        <div class="plan-box">
-          <div class="plan-icon">
-            <img src="images/icon-music.svg"></img>
+      <div class="card-body">
+        <h1 class="plan-title">Order Summary</h1>
+        <p class="plan-description"> You can now listen to millions of songs, audiobooks, and podcasts on any
+          device anywhere you like!</p>
+        <div class="plan-details">
+          <div class="plan-box">
+            <div class="plan-icon">
+              <img src="images/icon-music.svg"></img>
+            </div>
+            <div class="plan-features">
+              <div class="plan-type">Annual Plan</div>
+              <div class="plan-price">$59.99/year</div>
+            </div>
           </div>
-          <div class="plan-features">
-            <div class="plan-type">Annual Plan</div>
-            <div class="plan-price">$59.99/year</div>
+          <div class="change-link">
+            <a href="#">Change</a>
           </div>
         </div>
-        <div class="change-link">
-          <a href="#">Change</a>
+        <button class="payment-button">Proceed to Payment</button>
+        <div class="cancel-link">
+          <a href="#">Cancel Order</a>
         </div>
       </div>
-      <button class="payment-button">Proceed to Payment</button>
-      <button class="cancel-button">Cancel Order</button>
     </div>
   </div>
 
