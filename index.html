@@ -27,19 +27,19 @@
       background-image: url("images/pattern-background-desktop.svg");
       margin: 0;
       padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
     .pricing-container {
       display: flex;
-      /*czy nie lepiej robić flex-direction: coliumn dla prostokąta?*/
       justify-content: center;
       align-items: center;
       width: 100%;
-      min-height: 100vh;
-      padding: 40px 20px;
-
-      /*czy ten gap nie bardziej ma sens dla elementów wewnątrz prostokąta?*/
-
+      height: 100vh;
+      padding: 40px 20px 20px 20px;
+      flex: 1;
     }
 
     .pricing-plan {
@@ -54,7 +54,7 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      gap: 30px;
+      gap: 20px;
     }
 
     .plan-image {
@@ -90,6 +90,8 @@
       width: 100%;
       padding: 20px;
       justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
     }
 
     .plan-box {
@@ -167,6 +169,7 @@
     .attribution {
       font-size: 0.6875rem;
       text-align: center;
+      padding: 10px 0;
     }
 
     .attribution a {
