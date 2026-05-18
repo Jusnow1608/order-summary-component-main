@@ -29,11 +29,11 @@ Users should be able to:
 
 ### Screenshot
 
-![](./solution/solution-desktop.jpeg)
-![](./solution/solution-mobile.jpeg)
-![](./solution/solution-active-change-link.jpeg)
-![](./solution/solution-active-button.jpeg)
-![](./solution/solution-active-cancel-link.jpeg)
+![](./solution/solution-desktop.jpg)
+![](./solution/solution-mobile.jpg)
+![](./solution/solution-active-change-link.jpg)
+![](./solution/solution-active-button.jpg)
+![](./solution/solution-active-cancel-link.jpg)
 
 ### Links
 
@@ -117,5 +117,5 @@ What worked well: The assistant guided me through debugging CSS spacing issues w
 
 - GitHub - [@Jusnow1608](https://github.com/Jusnow1608)
 - Frontend Mentor - [@Jusnow1608](https://www.frontendmentor.io/profile/Jusnow1608)
-- LinkedIn - [@Justyna-Nowak-Szrajnert] (https://www.linkedin.com/in/justyna-nowak-szrajnert-a5168713b/)
+- LinkedIn - [@Justyna-Nowak-Szrajnert](https://www.linkedin.com/in/justyna-nowak-szrajnert-a5168713b/)
 
