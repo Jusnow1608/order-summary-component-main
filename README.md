@@ -1,4 +1,4 @@
-# Frontend Mentor - Order summary card solution
+# Frontend Mentor - Responsive order summary card built with Flexbox
 
 This is a solution to the [Order summary card challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/order-summary-component-QlPmajDUj). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
@@ -29,11 +29,23 @@ Users should be able to:
 
 ### Screenshot
 
-![](./solution/solution-desktop.jpg)
-![](./solution/solution-mobile.jpg)
-![](./solution/solution-active-change-link.jpg)
-![](./solution/solution-active-button.jpg)
-![](./solution/solution-active-cancel-link.jpg)
+Below are the screenshots showcasing the final implementation of the component, including responsive layouts and interactive states:
+
+#### Desktop View
+![Desktop Layout Preview](./solution/solution-desktop.jpg)
+*The full presentation of the card component optimized for larger desktop viewports, featuring centered alignment and proper card proportions.*
+
+#### Mobile View
+![Mobile Layout Preview](./solution/solution-mobile.jpg)
+*The compact, responsive layout of the card adapted for mobile screens, ensuring text blocks and action items gracefully scale without breaking or truncation.*
+
+#### Active States & Hover Effects
+![Active State - Change Link](./solution/solution-active-change-link.jpg)
+*Demonstration of the interactive state (hover/active) for the "Change" text link, highlighting the smooth color transition and underline removal.*
+![Active State - Payment Button](./solution/solution-active-button.jpg)
+*Demonstration of the interactive state for the main "Proceed to Payment" button, showcasing the vibrant hover color shifts and deep translucent shadow adaptations.*
+![Active State - Cancel Link](./solution/solution-active-cancel-link.jpg)
+*Demonstration of the interactive state for the "Cancel Order" button, highlighting the distinct text color modification when a user hovers over it.*
 
 ### Links
 
