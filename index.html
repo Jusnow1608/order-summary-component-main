@@ -20,7 +20,7 @@
     body {
       font-family: "Red Hat Display", sans-serif;
       color: hsl(224, 23%, 55%);
-      font-size: 16px;
+      font-size: 1rem;
       background-image: url("images/pattern-background-desktop.svg");
       margin: 0;
       padding: 0;
@@ -29,13 +29,25 @@
       min-height: 100vh;
     }
 
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px dashed hsl(245, 75%, 52%);
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+
+    .payment-button:focus-visible {
+      border-radius: 10px;
+    }
+
     .pricing-container {
       display: flex;
       justify-content: center;
       align-items: center;
       width: 100%;
       padding: 40px 20px 20px 20px;
-      flex: 1; /* Elastycznie wypełnia przestrzeń bez blokowania wysokości na sztywne 100vh */
+      flex: 1;
+      /* Elastycznie wypełnia przestrzeń bez blokowania wysokości na sztywne 100vh */
     }
 
     .pricing-plan {
@@ -68,7 +80,7 @@
     }
 
     .plan-title {
-      font-size: 28px;
+      font-size: 1.75rem;
       font-weight: 900;
       color: hsl(223, 47%, 23%);
       margin: 0;
@@ -105,17 +117,17 @@
     .plan-type {
       font-weight: 900;
       color: hsl(223, 47%, 23%);
-      font-size: 16px;
+      font-size: 1rem;
     }
 
     .plan-price {
       color: hsl(224, 23%, 55%);
-      font-size: 17px;
+      font-size: 1.0625rem;
     }
 
     .change-link a {
       font-weight: 700;
-      font-size: 14px;
+      font-size: 0.875rem;
       color: hsl(245, 75%, 52%);
     }
 
@@ -134,7 +146,7 @@
       background-color: hsl(245, 75%, 52%);
       font-weight: 700;
       margin-top: 10px;
-      font-size: 15px;
+      font-size: 0.9375rem;
       cursor: pointer;
       box-shadow: 0 20px 20px 0 rgba(56, 41, 224, 0.2);
     }
@@ -155,7 +167,7 @@
     .cancel-link a {
       color: hsl(224, 23%, 55%);
       font-weight: 700;
-      font-size: 15px;
+      font-size: 0.9375rem;
       text-decoration: none;
     }
 
@@ -184,7 +196,7 @@
       }
 
       .plan-image {
-        height: 160px; /* Zmniejszona wysokość, by karta pasowała do proporcji mobile */
+        height: 160px;
         width: 100%;
         object-fit: cover;
         display: block;
@@ -198,11 +210,11 @@
       }
 
       .plan-title {
-        font-size: 22px;
+        font-size: 1.375rem;
       }
 
       .plan-description {
-        font-size: 15px;
+        font-size: 0.9375rem;
         line-height: 25px;
       }
 
@@ -220,15 +232,15 @@
       }
 
       .plan-type {
-        font-size: 14px;
+        font-size: 0.875rem;
       }
 
       .plan-price {
-        font-size: 16px;
+        font-size: 1rem;
       }
 
       .change-link a {
-        font-size: 14px;
+        font-size: 0.875rem;
       }
 
       .payment-button {
@@ -249,12 +261,12 @@
   <div class="pricing-container">
     <div class="pricing-plan">
       <img class="plan-image" src="images/illustration-hero.svg" alt="Hero illustration">
-        
+
       <div class="card-body">
         <h1 class="plan-title">Order Summary</h1>
         <p class="plan-description">You can now listen to millions of songs, audiobooks, and podcasts on any
           device anywhere you like!</p>
-        
+
         <div class="plan-details">
           <div class="plan-box">
             <img class="plan-icon" src="images/icon-music.svg" alt="" aria-hidden="true">
@@ -262,7 +274,8 @@
               <div class="plan-type">Annual Plan</div>
               <div class="plan-price">$59.99/year</div>
             </div>
-          </div> <div class="change-link">
+          </div>
+          <div class="change-link">
             <a href="#">Change</a>
           </div>
         </div>
