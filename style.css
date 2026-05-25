@@ -1,0 +1,267 @@
+   :root {
+      --color-primary: hsl(245, 75%, 52%);
+      --color-primary-hover: hsl(245, 83%, 68%);
+      --color-dark: hsl(223, 47%, 23%);
+      --color-muted: hsl(224, 23%, 55%);
+      --color-bg-light: hsl(225, 100%, 98%);
+      --color-bg-page: hsl(225, 100%, 94%);
+
+      --color-button-box-shadow: rgba(56, 41, 224, 0.2);
+      --color-button-box-shadow-hover: rgba(56, 41, 224, 0.3);
+      --color-border-hover: hsl(245, 47%, 62%);
+      --color-footer: hsl(228, 45%, 44%);
+      --color-container-box-shadow: rgba(56, 41, 224, 0.04);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Red Hat Display", sans-serif;
+      color: var(--color-muted);
+      font-size: 1rem;
+      background-color: var(--color-bg-page);
+      background-image: url("images/pattern-background-desktop.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: top center;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: .1875rem dashed var(--color-primary);
+      outline-offset: .25rem;
+      border-radius: .25rem;
+    }
+
+    .payment-button:focus-visible {
+      border-radius: .625rem;
+    }
+
+    .pricing-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding: 2.5rem 1.25rem 1.25rem 1.25rem;
+      flex: 1;
+    }
+
+    .pricing-plan {
+      flex: 1;
+      max-width: 450px;
+      width: 100%;
+      padding: 0;
+      background-color: white;
+      border-radius: 1.25rem;
+      text-align: center;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 1.25rem;
+      box-shadow: 0 1.25rem 2.5rem var(--color-container-box-shadow);
+    }
+
+    .plan-image {
+      object-fit: cover;
+      height: 230px;
+      width: 100%;
+      display: block;
+    }
+
+    .card-body {
+      padding: .625rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .plan-title {
+      font-size: 1.75rem;
+      font-weight: 900;
+      color: var(--color-dark);
+      margin: 0;
+    }
+
+    .plan-description {
+      margin: 0 .625rem;
+      line-height: 1.5625rem;
+    }
+
+    .plan-details {
+      display: flex;
+      align-items: center;
+      background-color: var(--color-bg-light);
+      border-radius: .9375rem;
+      width: 100%;
+      padding: 1.25rem;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+      gap: .9375rem;
+    }
+
+    .plan-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .plan-features {
+      line-height: 1.75rem;
+    }
+
+    .plan-type {
+      font-weight: 900;
+      color: var(--color-dark);
+      font-size: 1rem;
+    }
+
+    .plan-price {
+      color: var(--color-muted);
+      font-size: 1.0625rem;
+    }
+
+    .change-link a {
+      font-weight: 700;
+      font-size: 0.875rem;
+      color: var(--color-primary);
+      text-decoration: none;
+      
+    }
+
+    .change-link a:hover {
+      text-decoration: underline;
+      color: var(--color-primary-hover);
+      font-weight: 700;
+    }
+
+    .payment-button {
+      border-radius: .625rem;
+      width: 100%;
+      padding: 1rem;
+      border: none;
+      color: white;
+      background-color: var(--color-primary);
+      font-weight: 700;
+      margin-top: .625rem;
+      font-size: 0.9375rem;
+      cursor: pointer;
+      box-shadow: 0 1.25rem 1.25rem 0 var(--color-button-box-shadow);
+      transition: all 0.2s ease;
+    }
+
+    .payment-button:hover {
+      background-color: var(--color-primary-hover);
+      box-shadow: 0 .625rem .9375rem 0 var(--color-button-box-shadow-hover);
+    }
+
+    .cancel-link {
+      margin-bottom: 1.875rem;
+      padding: .625rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cancel-link a {
+      color: var(--color-muted);
+      font-weight: 700;
+      font-size: 0.9375rem;
+      text-decoration: none;
+    }
+
+    .cancel-link a:hover {
+      color: var(--color-dark);
+    }
+
+    .attribution {
+      font-size: 0.6875rem;
+      text-align: center;
+      padding: .625rem 0;
+    }
+
+    .attribution a {
+      color: var(--color-footer);
+    }
+
+    @media (max-width: 25rem) {
+      body{
+       background-image: url("images/pattern-background-mobile.svg"); 
+      }
+      .pricing-container {
+        padding: 1.5rem 1rem;
+      }
+
+      .pricing-plan {
+        max-width: 327px;
+        width: 100%;
+      }
+
+      .plan-image {
+        height: 160px;
+        width: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .card-body {
+        padding: 1.5rem 1.5rem 2rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .plan-title {
+        font-size: 1.375rem;
+      }
+
+      .plan-description {
+        font-size: 0.9375rem;
+        line-height: 1.5625rem;
+      }
+
+      .plan-details {
+        padding: .75rem 1rem;
+        gap: .5rem;
+      }
+
+      .plan-box {
+        gap: .75rem;
+      }
+
+      .plan-features {
+        line-height: 1.5rem;
+      }
+
+      .plan-type {
+        font-size: 0.875rem;
+      }
+
+      .plan-price {
+        font-size: 1rem;
+      }
+
+      .change-link a {
+        font-size: 0.875rem;
+      }
+
+      .payment-button {
+        padding: .875rem;
+        margin-top: .5rem;
+      }
+
+      .cancel-link {
+        margin-bottom: 0;
+        padding: .5rem;
+        margin-top: .5rem;
+      }
+    }
