@@ -193,7 +193,7 @@
       color: var(--color-footer);
     }
 
-    @media (max-width: 25rem) {
+    @media (max-width: 20rem) {
       body{
        background-image: url("images/pattern-background-mobile.svg"); 
       }

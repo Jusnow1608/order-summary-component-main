@@ -1,6 +1,6 @@
-# Frontend Mentor - Responsive order summary card built with Flexbox
+# Frontend Mentor - Results summary component solution
 
-This is a solution to the [Order summary card challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/order-summary-component-QlPmajDUj). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Results summary component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/results-summary-component-CE_K6s0maV). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
 ## Table of contents
 
@@ -12,10 +12,8 @@ This is a solution to the [Order summary card challenge on Frontend Mentor](http
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
   - [AI Collaboration](#ai-collaboration)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -23,9 +21,8 @@ This is a solution to the [Order summary card challenge on Frontend Mentor](http
 
 Users should be able to:
 
-- See hover states for all interactive elements (buttons and links)
-- View the optimal layout depending on their device's screen size (fully responsive layout)
-- Experience a robust interface that does not break on extreme screen sizes (very narrow or short viewport dimensions)
+- View the optimal layout for the interface depending on their device's screen size
+- See hover and focus states for all interactive elements on the page
 
 ### Screenshot
 
@@ -34,102 +31,89 @@ Below are the screenshots showcasing the final implementation of the component, 
 #### Desktop View
 ![Desktop Layout Preview](./solution/solution-desktop.jpg)
 
-*The full presentation of the card component optimized for larger desktop viewports, featuring centered alignment and proper card proportions.*
+*The full presentation of the component optimized for larger desktop viewports, featuring centered 2-column alignment and balanced card proportions.*
 
 #### Mobile View
 ![Mobile Layout Preview](./solution/solution-mobile.jpg)
 
-*The compact, responsive layout of the card adapted for mobile screens, ensuring text blocks and action items gracefully scale without breaking or truncation.*
+*The compact, responsive layout of the card adapted for mobile screens, ensuring text blocks and score summaries scale fluidly.*
 
 #### Active States & Hover Effects
-![Active State - Change Link](./solution/solution-active-change-link.jpg)
-*Demonstration of the interactive state (hover/active) for the "Change" text link, highlighting the smooth color transition and underline removal.*
-![Active State - Payment Button](./solution/solution-active-button.jpg)
+![Active State - Category Items](./solution/solution-active-change-link.jpg)
+*Demonstration of the interactive state (hover/active) for the summary categories, highlighting clean focus indications and accessible layer feedback.*
 
-*Demonstration of the interactive state for the main "Proceed to Payment" button, showcasing the vibrant hover color shifts and deep translucent shadow adaptations.*
-![Active State - Cancel Link](./solution/solution-active-cancel-link.jpg)
+![Active State - Continue Button](./solution/solution-active-button.jpg)
+*Demonstration of the interactive state for the main "Continue" button, showcasing dynamic background transitions and depth shadow adaptations without layout shift.*
 
-*Demonstration of the interactive state for the "Cancel Order" button, highlighting the distinct text color modification when a user hovers over it.*
+![Active State - Focus Indicators](./solution/solution-active-cancel-link.jpg)
+*Demonstration of fully accessible keyboard focus states (`:focus-visible`) across interactive layers to satisfy accessibility guidelines.*
 
 ### Links
 
-- Solution URL: [https://www.frontendmentor.io/solutions/responsive-order-summary-card-built-with-flexbox-MKIRhCgXkh]
-- Live Site URL: [https://jusnow1608.github.io/order-summary-component-main/]
+- Solution URL: [Frontend Mentor Solution](https://www.frontendmentor.io/solutions/results-summary-component-built-with-semantic-html-and-modern-css-vF6QzsjKb7)
+- Live Site URL: [GitHub Pages Live Preview](https://jusnow1608.github.io/results-summary-component-main/)
 
 ## My process
 
 ### Built with
 
-- Semantic HTML5 markup
-- CSS custom properties (Colors and Fonts)
-- Flexbox (for full-page layout, vertical content alignment, and layout blocks)
-- Global box-sizing reset (`border-box`)
-- Content-driven responsive design using fluid breakpoints
+- Semantic HTML5 structural markup (incorporating strict accessibility landmarks)
+- CSS Custom Properties (Variables) for centralized theme and color management
+- Flexbox & CSS Grid for alignment, fluid item distribution, and two-column component splitting
+- Mobile-first approach coupled with fluid media queries using modern relative units (`em`, `rem`)
+- Accessibility-first development practices (including screen-reader optimized headings)
 
 ### What I learned
 
-During this challenge, I reinforced my understanding of how default browser styles interact with custom layouts. One of the key breakthroughs was learning how to properly control spacing using Flexbox properties instead of relying on default margins.
+During this project, I drastically improved my clean-coding habits by shifting away from quick cosmetic fixes and aligning my workflow with modern automated validator standards. 
 
-For instance, I fixed an awkward layout gap by resetting the default margin of the header element:
+#### 1. Accessible Document Structure (Landmarks)
+I learned that every piece of content must reside within an accessible landmark to assist screen readers. I fixed automated warnings by wrapping the component structure inside a semantic `<main>` tag and including a visually hidden `<h1>` for proper page hierarchy:
 
 ```html
-<h1 class="plan-title">Order Summary</h1>
+<main class="results-container">
+  <h1 class="visually-hidden">Results Summary</h1>
+  
+  <section class="results-panel">...</section>
+  <section class="summary-panel">...</section>
+</main>
 ```
-```css
-.plan-title {
-  font-size: 28px;
-  font-weight: 900;
-  color: hsl(223, 47%, 23%);
-  margin: 0; /* Resetting user-agent styles to avoid accumulated gaps */
-}
-```
-Transitioning from fixed sizes (width: 360px) to flexible layouts (width: 100%) taught me the immense value of applying a global layout reset, ensuring elements safely respect padding without spilling out:
-```css
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-```
-I also faced and solved major responsive design challenges regarding layout fluidization:
+2. HTML Validity & Button Types
+I discovered that leaving native buttons without an explicit type attribute triggers validation errors. I ensured all semantic actions are clearly defined:
 
-1. Content-Driven Breakpoints: Instead of strictly forcing mobile adjustments at the default 375px, I observed that the layout elements began crowding and text started breaking awkwardly at around 400px. I proactively introduced @media (max-width: 400px) to compact the inner padding and font sizes early. This content-driven approach ensures a smooth presentation across a wider range of intermediate mobile viewports.
+```HTML
+<button type="button" class="continue-button">Continue</button>
+```
+3. Shifting from Pixels to Relative Units (rem / em)
+To respect global user font-size preferences and prevent layouts from shattering on system zoom, I refactored the entire styling codebase. I replaced all absolute values (px, pt) with relative units (rem, em) inside margins, padding, gaps, and media queries:
 
-2. Mobile Component Compacting: To prevent the component from overflowing shorter devices, I used a structured vertical compression inside the media query. By lowering the hero image height to 160px and slightly trimming the inner element gaps, I achieved a balanced, pixel-perfect layout where everything (including the "Annual Plan" segment) safely stays in a single row without compression artifacts.
-```css
-@media (max-width: 400px) {
-  .plan-details {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: nowrap; /* Enforces a single row across all mobile screens */
-    padding: 12px 16px; 
+```CSS
+/* Transitioned from absolute units to accessible, scalable values */
+.summary-wrapper {
+  gap: 1.25rem; 
+}
+
+@media (max-width: 37.5em) {
+  body {
+    /* Responsive overrides using clean, relative breakpoints */
   }
 }
 ```
 ### Continued development
+Moving into future frontend challenges, my focus will remain on:
 
-In future projects, I want to dive deeper into:
+- Logical Properties: Replacing traditional directional values (like margin-bottom or left) with logical alternatives (like margin-block-end or inline-start) to naturally support internationalization and multi-directional text reading flows.
 
-1. Mobile-first workflow: Starting the design from the smallest screen size up, rather than scaling down desktop layouts.
-
-2. Advanced Flexbox & CSS Grid: Gaining more confidence in structuring larger dashboards and complex layout containers without relying on quick fixes.
-
-### Useful resources
-
-MDN Web Docs - Box Sizing - This reference page helped me fully comprehend why padding sometimes causes elements to overflow their container.
-
-A Complete Guide to Flexbox (CSS-Tricks) - An excellent visual resource for understanding alignment and spaces between flex children.
+- Fluid Typography: Experimenting with advanced responsive CSS functions such as clamp(), min(), and max() to create smooth transitions for layout scaling without relying too heavily on rigid media query breakpoints.
 
 ### AI Collaboration
+I collaborated with Gemini AI as an automated linting partner and design code-reviewer to refine this project.
 
-During this challenge, I collaborated with an AI assistant to debug and optimize my code.
+- How I used it: I uploaded the raw validation feedback sheets and error logs directly into the prompt terminal. We parsed through warning reports highlighting absolute layout dependencies, un-typed structural tags, and un-anchored document content.
 
-What tool do I use: Gemini
+- What worked well: The system effectively pinpointed minor semantic syntax omissions (like missing semicolons in roots or improper class declarations in responsive media tags) and walked me through structural refactoring steps to establish a fully responsive, clean, and accessible final product.
 
-How I used it: I used AI as a mentor to figure out why elements were misbehaving on mobile layouts, how layout mechanics handle device scaling, and how to analyze layout errors using screenshot analysis.
-
-What worked well: The assistant guided me through debugging CSS spacing issues without simply writing the entire codebase, reinforcing my knowledge of viewports, flex behaviors, and text rendering rules.
-
-
-## Author
+### Author
 
 - GitHub - [@Jusnow1608](https://github.com/Jusnow1608)
 - Frontend Mentor - [@Jusnow1608](https://www.frontendmentor.io/profile/Jusnow1608)
