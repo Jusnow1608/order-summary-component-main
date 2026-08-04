@@ -1,6 +1,6 @@
-# Frontend Mentor - Results summary component solution
+# Frontend Mentor - Order summary component solution
 
-This is a solution to the [Results summary component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/results-summary-component-CE_K6s0maV). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Order summary component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/order-summary-component-QlPmajDUj). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
 ## Table of contents
 
@@ -50,8 +50,8 @@ Below are the screenshots showcasing the final implementation of the component, 
 
 ### Links
 
-- Solution URL: [Frontend Mentor Solution](https://www.frontendmentor.io/solutions/results-summary-component-built-with-semantic-html-and-modern-css-vF6QzsjKb7)
-- Live Site URL: [GitHub Pages Live Preview](https://jusnow1608.github.io/results-summary-component-main/)
+- Solution URL: [Frontend Mentor Solution](https://www.frontendmentor.io/solutions/responsive-order-summary-card-built-with-flexbox-MKIRhCgXkh)
+- Live Site URL: [GitHub Pages Live Preview](https://jusnow1608.github.io/order-summary-component-main/)
 
 ## My process
 
